@@ -33,7 +33,7 @@ class HelpCommand : WACommand() {
                 }
 
                 override fun getDescription(): String {
-                    return "View command help"
+                    return "查看命令帮助"
                 }
             })
                     .registerCommands()

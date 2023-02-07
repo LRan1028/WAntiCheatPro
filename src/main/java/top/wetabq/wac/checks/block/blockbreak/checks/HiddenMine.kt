@@ -108,14 +108,14 @@ class HiddenMine : Check<BlockBreakData>() {
                         }
 
                         override fun getDescription(): String {
-                            return "Add a world that doesn't need HiddenMine"
+                            return "添加一个不需要HiddenMine的世界"
                         }
 
                         override fun execute(sender: CommandSender, label: String, args: Array<out String>, df: DefaultConfig): Boolean {
                             if(sender.isOp) {
                                 val list = df.defaultConfig[ConfigPaths.CHECKS_BREAK_HIDDENMINE_PROTECTWORLD] as ArrayList<String>?
                                 list?.add(args[1])
-                                sender.sendMessage(WAntiCheatPro.TITLE + "Successfully added world [${args[1]}]")
+                                sender.sendMessage(WAntiCheatPro.TITLE + "成功添加世界 [${args[1]}]")
                             }
                             return true
                         }
@@ -131,14 +131,14 @@ class HiddenMine : Check<BlockBreakData>() {
                         }
 
                         override fun getDescription(): String {
-                            return "Remove a world that doesn't need HiddenMine"
+                            return "删除一个不需要HiddenMine的世界"
                         }
 
                         override fun execute(sender: CommandSender, label: String, args: Array<out String>, df: DefaultConfig): Boolean {
                             if(sender.isOp) {
                                 val list = df.defaultConfig[ConfigPaths.CHECKS_BREAK_HIDDENMINE_PROTECTWORLD] as ArrayList<String>?
                                 list?.remove(args[1])
-                                sender.sendMessage(WAntiCheatPro.TITLE + "Successfully removed world [${args[1]}]")
+                                sender.sendMessage(WAntiCheatPro.TITLE + "成功删除世界 [${args[1]}]")
                             }
                             return true
                         }

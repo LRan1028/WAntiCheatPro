@@ -165,28 +165,28 @@ class ViolationModule : GroupModule() {
                 .addConfigPath(ConfigPaths.VIOLATION_BUFFER_AUTO_SIZE, 5)
                 .addConfigPath(
                     ConfigPaths.VIOLATION_MESSAGE_WARNING,
-                    "{WACTitle}[WARNING ExtraLog:{extra}] &6&lPlease pay attention to your game behavior"
+                    "{WACTitle}[WARNING ExtraLog:{extra}] &6&l请注意你的游戏行为"
                 )
                 .addConfigPath(
                     ConfigPaths.VIOLATION_MESSAGE_KICK,
-                    "&c&l[WAC DETECT KICK]{enter}&6&lPlease pay attention to your game behavior{enter}&bExtraLog:{extra}{enter}VID:{vid}"
+                    "&c&l[WAC DETECT KICK]{enter}&6&l请注意你的游戏行为{enter}&bExtraLog:{extra}{enter}VID:{vid}"
                 )
                 .addConfigPath(
                     ConfigPaths.VIOLATION_MESSAGE_MUTE_0,
-                    "{WACTitle}[MUTE DURATION:{duration}s] &6&lPlease pay attention to your game behavior"
+                    "{WACTitle}[MUTE DURATION:{duration}s] &6&l请注意你的游戏行为"
                 )
                 .addConfigPath(
                     ConfigPaths.VIOLATION_MESSAGE_MUTE_1,
-                    "{WACTitle}[MUTE EndTime:{endDuration}] &6&lYou are muted"
+                    "{WACTitle}[MUTE EndTime:{endDuration}] &6&l你已被禁言"
                 )
                 .addConfigPath(
-                    ConfigPaths.VIOLATION_MESSAGE_BAN, "&c&l[WAC DETECT BAN] &r&e&oUnbanTime:{endDuration}{enter}" +
-                            "&6&lPlease pay attention to your game behavior{enter}" +
+                    ConfigPaths.VIOLATION_MESSAGE_BAN, "&c&l[WAC DETECT BAN] &r&e&o解封时间:{endDuration}{enter}" +
+                            "&6&l请注意你的游戏行为{enter}" +
                             "&bExtraLog:{extra}{enter}&l&aVID:{vid}"
                 )
                 .addConfigPath(
                     ConfigPaths.VIOLATION_MESSAGE_BAN_BROADCAST,
-                    "{WACTitle}&lA player was kicked out of the game because of abuse of server features or cheating"
+                    "{WACTitle}&l一名玩家因为滥用服务器功能或作弊而被踢出了游戏"
                 )
                 .bindListener(object : Listener {
 
@@ -260,7 +260,7 @@ class ViolationModule : GroupModule() {
                     }
 
                     override fun getDescription(): String {
-                        return "pardon player for ban"
+                        return "解除对玩家的封禁"
                     }
 
                     override fun execute(sender: CommandSender, label: String, args: Array<out String>, df: DefaultConfig): Boolean {
@@ -295,7 +295,7 @@ class ViolationModule : GroupModule() {
                     }
 
                     override fun getDescription(): String {
-                        return "process player in violation buffer"
+                        return "处理违规缓冲区内的玩家"
                     }
 
                     override fun execute(sender: CommandSender, label: String, args: Array<out String>, df: DefaultConfig): Boolean {
@@ -322,7 +322,7 @@ class ViolationModule : GroupModule() {
                     }
 
                     override fun getDescription(): String {
-                        return "clean player violation buffer"
+                        return "清除玩家的违规缓冲"
                     }
 
                     override fun execute(sender: CommandSender, label: String, args: Array<out String>, df: DefaultConfig): Boolean {
@@ -346,7 +346,7 @@ class ViolationModule : GroupModule() {
                     }
 
                     override fun getDescription(): String {
-                        return "view the violation buffer"
+                        return "查看违规缓冲区"
                     }
 
                     override fun execute(sender: CommandSender, label: String, args: Array<out String>, df: DefaultConfig): Boolean {

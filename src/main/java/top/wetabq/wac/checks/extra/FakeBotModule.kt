@@ -34,7 +34,7 @@ class FakeBotModule : GroupModule() {
             registry.addCommand(
                             object : WSubCommand("wreport"){
                                 override fun getDescription(): String {
-                                    return "Report cheating(Hacking) action"
+                                    return "举报作弊（黑客）行为"
                                 }
 
                                 override fun getAliases(): Array<String> {
@@ -54,7 +54,7 @@ class FakeBotModule : GroupModule() {
                                                         ?: System.currentTimeMillis()) <= System.currentTimeMillis()
                                                 ) {
                                                     reportTime[targetPlayer.name] = System.currentTimeMillis() + 1000*60*2
-                                                    sender.sendMessage(WAntiCheatPro.translateMessage("{WACTitle} &a&lThanks for your report, &r&eWAC will observe the player and notify online helpers to view it."))
+                                                    sender.sendMessage(WAntiCheatPro.translateMessage("{WACTitle} &a&l感谢您的举报, &r&e任何邪恶终将绳之以法！"))
                                                     registry.addAsyncTask(object : AsyncTask() {
                                                         override fun onRun() {
                                                             Thread.sleep(RandomUtils.r(1000 * 1, 1000 * 15).toLong())
@@ -66,16 +66,16 @@ class FakeBotModule : GroupModule() {
                                                     NoCheckUtils.setNoCheck(CheckType.MOVING_HIGHJUMP,targetPlayer,0)
                                                     NoCheckUtils.setNoCheck(CheckType.MOVING_NOFALL,targetPlayer,0)
                                                 } else {
-                                                    sender.sendMessage(WAntiCheatPro.translateMessage("{WACTitle} &c&lYou have already reported."))
+                                                    sender.sendMessage(WAntiCheatPro.translateMessage("{WACTitle} &c&l你已经举报过这名玩家啦."))
                                                 }
                                             } else {
-                                                sender.sendMessage(WAntiCheatPro.translateMessage("{WACTitle} &c&lTarget can't be yourself"))
+                                                sender.sendMessage(WAntiCheatPro.translateMessage("{WACTitle} &c&l赫赫，你不能举报你自己哦"))
                                             }
                                         } else {
-                                            sender.sendMessage(WAntiCheatPro.translateMessage("{WACTitle} &c&lTarget player is offline"))
+                                            sender.sendMessage(WAntiCheatPro.translateMessage("{WACTitle} &c&l该玩家不在线"))
                                         }
                                     } else {
-                                        sender.sendMessage("${TextFormat.RED} Usage: /wr <playerName>")
+                                        sender.sendMessage("${TextFormat.RED} 用法: /wr <玩家ID>")
                                         return false
                                     }
                                     return true
@@ -83,7 +83,6 @@ class FakeBotModule : GroupModule() {
                             }
                     )
                     .registerCommands()
-                    .bindListener(FakeBotListener())
                     .setModuleAuthor("WetABQ")
                     .setModuleName("FakeBotModule")
                     .context()

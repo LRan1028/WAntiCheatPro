@@ -31,12 +31,12 @@ class VersionCommand : WACommand() {
 
                 override fun execute(sender: CommandSender, label: String, args: Array<out String>,df: DefaultConfig): Boolean {
                     sender.sendMessage("${(context as RegCommandContext).commandPrefix}WAntiCheatPro - ${WAntiCheatPro.VERSION} by WetABQ\n" +
-                            "${(context as RegCommandContext).commandPrefix}If you have any questions, please feel free to send us feedback to our email wetabq@gmail.com")
+                            "${(context as RegCommandContext).commandPrefix}如果你有任何问题,请给我们反馈邮件 wetabq@gmail.com")
                     return true
                 }
 
                 override fun getDescription(): String {
-                    return "View WAC's version"
+                    return "查看WAC的版本"
                 }
             })
                     .registerCommands()

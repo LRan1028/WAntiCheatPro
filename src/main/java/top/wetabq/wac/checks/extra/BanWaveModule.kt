@@ -59,7 +59,7 @@ class BanWaveModule : GroupModule() {
                         }
 
                         override fun getDescription(): String {
-                            return "Start processing all BanWave players right away"
+                            return "立即开始处理所有在BanWave内的玩家"
                         }
 
                         override fun execute(sender: CommandSender, label: String, args: Array<out String>, df: DefaultConfig): Boolean {
@@ -67,7 +67,7 @@ class BanWaveModule : GroupModule() {
                                 banWave.keys.forEach { vp -> vp.executePunishment() }
                                 banWave.clear()
                                 banWave = HashMap()
-                                sender.sendMessage(WAntiCheatPro.TITLE + "Successful execution")
+                                sender.sendMessage(WAntiCheatPro.TITLE + "成功执行")
                             }
                             return true
                         }

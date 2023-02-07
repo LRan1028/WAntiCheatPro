@@ -31,7 +31,7 @@ class ColorChat : Check<ChatCheckData>() {
         if (registry is RegGroupModule) {
             registry.addConfigPath(ConfigPaths.CHECKS_CHAT_COLORCHAT_REPLACE, true)
                     .addConfigPath(ConfigPaths.CHECKS_CHAT_COLORCHAT_ALLOWPLAYERS, arrayListOf<String>())
-                    .addConfigPath(ConfigPaths.CHECKS_CHAT_COLORCHAT_MSG,"{WACTitle} &6&lYou are not allowed to use '§' characters")
+                    .addConfigPath(ConfigPaths.CHECKS_CHAT_COLORCHAT_MSG,"{WACTitle} &6&l你不能使用 '§' 字符!")
                     .addCommand(object: WSubCommand("addAllowColorPlayer") {
                         override fun getAliases(): Array<String> {
                             return arrayOf("addAllowCP","addACP","addAllowColorPlayer")
@@ -42,14 +42,14 @@ class ColorChat : Check<ChatCheckData>() {
                         }
 
                         override fun getDescription(): String {
-                            return "Add players who are allowed to use colored characters"
+                            return "添加允许使用彩色字符的玩家"
                         }
 
                         override fun execute(sender: CommandSender, label: String, args: Array<out String>,df: DefaultConfig): Boolean {
                             if(sender.isOp) {
                                 val list = df.defaultConfig[ConfigPaths.CHECKS_CHAT_COLORCHAT_ALLOWPLAYERS] as ArrayList<String>?
                                 list?.add(args[1])
-                                sender.sendMessage(WAntiCheatPro.TITLE + "Successfully added players [${args[1]}]")
+                                sender.sendMessage(WAntiCheatPro.TITLE + "成功添加允许使用彩色字符玩家 [${args[1]}]")
                             }
                             return true
                         }
@@ -64,14 +64,14 @@ class ColorChat : Check<ChatCheckData>() {
                         }
 
                         override fun getDescription(): String {
-                            return "Remove players who are allowed to use colored characters"
+                            return "移除允许使用彩色字符的玩家"
                         }
 
                         override fun execute(sender: CommandSender, label: String, args: Array<out String>,df: DefaultConfig): Boolean {
                             if(sender.isOp) {
                                 val list = df.defaultConfig[ConfigPaths.CHECKS_CHAT_COLORCHAT_ALLOWPLAYERS] as ArrayList<String>?
                                 list?.remove(args[1])
-                                sender.sendMessage(WAntiCheatPro.TITLE + "Successfully removed players [${args[1]}]")
+                                sender.sendMessage(WAntiCheatPro.TITLE + "成功移除允许使用彩色字符的玩家 [${args[1]}]")
                             }
                             return true
                         }
